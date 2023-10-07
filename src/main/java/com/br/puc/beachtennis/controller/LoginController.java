@@ -30,7 +30,7 @@ public class LoginController {
     @Autowired
     protected ValidationUtils validationUtils;
 
-    @PostMapping
+    @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody @Valid LoginRequestDto loginRequestDto, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             List<String> validationErrors = ValidationUtils.getValidationErrors(bindingResult);
