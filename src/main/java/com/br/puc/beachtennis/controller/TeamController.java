@@ -50,7 +50,7 @@ public class TeamController {
     public ResponseEntity<Void> deleteTeam(@PathVariable Long id) {
         try {
             teamService.deleteTeam(id);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.OK);
         } catch (RuntimeException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
