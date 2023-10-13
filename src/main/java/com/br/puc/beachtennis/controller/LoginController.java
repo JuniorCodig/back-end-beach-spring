@@ -32,6 +32,7 @@ public class LoginController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody @Valid LoginRequestDto loginRequestDto, BindingResult bindingResult) {
+        System.out.println("LOGANDO");
         if (bindingResult.hasErrors()) {
             List<String> validationErrors = ValidationUtils.getValidationErrors(bindingResult);
             return ResponseEntity.badRequest().body(validationErrors);
